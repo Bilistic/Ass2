@@ -1,25 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert -f docker-compose.yml
-    kompose.version: 1.13.0 (84fa826)
-  creationTimestamp: null
   labels:
-    io.kompose.service: server
+    app: server
   name: server
 spec:
-  replicas: 1
-  strategy: {}
+  replicas: 3
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        io.kompose.service: server
+        app: server
     spec:
       containers:
-      - image: server
+      - image: gcr.io/assignment2-205312/server:v1
         name: server
-        resources: {}
       restartPolicy: Always
-status: {}

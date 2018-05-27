@@ -1,21 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert -f docker-compose.yml
-    kompose.version: 1.13.0 (84fa826)
-  creationTimestamp: null
   labels:
-    io.kompose.service: rabbitmq
+    app: rabbitmq
   name: rabbitmq
 spec:
-  replicas: 1
-  strategy: {}
+  replicas: 3
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        io.kompose.service: rabbitmq
+        app: rabbitmq
     spec:
       containers:
       - env:
@@ -28,6 +22,4 @@ spec:
         ports:
         - containerPort: 15672
         - containerPort: 5672
-        resources: {}
       restartPolicy: Always
-status: {}

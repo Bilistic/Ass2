@@ -1,25 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert -f docker-compose.yml
-    kompose.version: 1.13.0 (84fa826)
-  creationTimestamp: null
   labels:
-    io.kompose.service: reddit
+    app: reddit
   name: reddit
 spec:
-  replicas: 1
-  strategy: {}
+  replicas: 3
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        io.kompose.service: reddit
+        app: reddit
     spec:
       containers:
-      - image: reddit
+      - image: gcr.io/assignment2-205312/reddit:v1
         name: reddit
-        resources: {}
+        imagePullPolicy: Always
       restartPolicy: Always
-status: {}
