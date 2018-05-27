@@ -5,11 +5,11 @@ metadata:
     app: web
   name: web
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
-        app: webls
+        app: web
     spec:
       containers:
       - image: gcr.io/assignment2-205312/web:v1
@@ -17,5 +17,4 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
-        - containerPort: 8080
       restartPolicy: Always

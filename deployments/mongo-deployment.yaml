@@ -5,7 +5,7 @@ metadata:
     app: mongo
   name: mongo
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:

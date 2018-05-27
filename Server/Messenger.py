@@ -8,7 +8,7 @@ class Messenger(object):
         self.name = name
         self.host = host
         credentials = pika.PlainCredentials('admin', 'admin')
-        retries = 20
+        retries = 120
         while True:
             try:
                 self._connection = pika.BlockingConnection(pika.ConnectionParameters(host, credentials=credentials))

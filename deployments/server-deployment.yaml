@@ -14,4 +14,5 @@ spec:
       containers:
       - image: gcr.io/assignment2-205312/server:v1
         name: server
+        imagePullPolicy: Always
       restartPolicy: Always

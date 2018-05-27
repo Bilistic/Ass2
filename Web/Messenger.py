@@ -8,7 +8,8 @@ class Messenger(object):
         self.name = name
         self.host = host
         credentials = pika.PlainCredentials('admin', 'admin')
-        retries = 20
+        retries = 120
+        print("Trying to connect to {}".format(host))
         while True:
             try:
                 self._connection = pika.BlockingConnection(pika.ConnectionParameters(host, credentials=credentials))
@@ -16,6 +17,7 @@ class Messenger(object):
                 break
             except Exception as e:
                 if retries == 0:
+                	print("Connection failed after 120 seconds...")
                     raise e
                 retries -= 1
                 time.sleep(1)
