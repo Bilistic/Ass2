@@ -1,3 +1,4 @@
 pika
 pymongo
 textblob
+pytest-cov
