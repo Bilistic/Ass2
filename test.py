@@ -1,7 +1,7 @@
 from Server import Server
 import unittest
 
-class TestFibonacci(unittest.TestCase):
+class TestServer(unittest.TestCase):
 
     def setUp(self):
         pass
@@ -31,4 +31,4 @@ class TestFibonacci(unittest.TestCase):
 
     
 if __name__ == '__main__':
-  unittest.main()
+    unittest.main()
